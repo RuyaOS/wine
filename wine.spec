@@ -47,7 +47,7 @@
 
 Name:           wine
 Version:        7.12
-Release:        100%{?dist}
+Release:        101%{?dist}
 Summary:        A compatibility layer for windows applications
 
 License:        LGPLv2+
@@ -728,6 +728,7 @@ This package adds the opencl driver for wine.
 %setup -qn wine-%{version}
 %patch100 -p1 -b.cross
 %patch511 -p1 -b.cjk
+%patch512 -p1 -b.arabic
 
 %if 0%{?wine_staging}
 # setup and apply wine-staging patches
@@ -2817,6 +2818,9 @@ fi
 %endif
 
 %changelog
+* Sun Oct 2 2022 Mosaab Alzoubi <mosaab[AT]parmg[DOT]sa> - 7.12-101
+- Add mixed Arabic-English text fix - 2nd try
+
 * Sat Oct 1 2022 Mosaab Alzoubi <mosaab[AT]parmg[DOT]sa> - 7.12-100
 - Add mixed Arabic-English text fix
 
